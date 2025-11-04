@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   prepare:
-    if: github.repository == 'Fission-AI/OnSpec'
+    if: github.repository == 'DauQuangThanh/OnSpec'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
