@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The `openspec init` command SHALL create a complete OpenSpec directory structure in any project, enabling immediate adoption of OpenSpec conventions with support for multiple AI coding assistants.
+The `openspec init` command SHALL create a complete OnSpec directory structure in any project, enabling immediate adoption of OnSpec conventions with support for multiple AI coding assistants.
 ## Requirements
 ### Requirement: Progress Indicators
 
@@ -13,15 +13,15 @@ The command SHALL display progress indicators during initialization to provide c
 - **WHEN** executing initialization steps
 - **THEN** validate environment silently in background (no output unless error)
 - **AND** display progress with ora spinners:
-  - Show spinner: "⠋ Creating OpenSpec structure..."
-  - Then success: "✔ OpenSpec structure created"
+  - Show spinner: "⠋ Creating OnSpec structure..."
+  - Then success: "✔ OnSpec structure created"
   - Show spinner: "⠋ Configuring AI tools..."
   - Then success: "✔ AI tools configured"
 
 ### Requirement: Directory Creation
-The command SHALL create the complete OpenSpec directory structure with all required directories and files.
+The command SHALL create the complete OnSpec directory structure with all required directories and files.
 
-#### Scenario: Creating OpenSpec structure
+#### Scenario: Creating OnSpec structure
 - **WHEN** `openspec init` is executed
 - **THEN** create the following directory structure:
 ```
@@ -37,12 +37,12 @@ openspec/
 The command SHALL generate required template files with appropriate content for immediate use.
 
 #### Scenario: Generating template files
-- **WHEN** initializing OpenSpec
-- **THEN** generate `openspec/AGENTS.md` containing complete OpenSpec instructions for AI assistants
+- **WHEN** initializing OnSpec
+- **THEN** generate `openspec/AGENTS.md` containing complete OnSpec instructions for AI assistants
 - **AND** generate `project.md` with project context template
 
 ### Requirement: AI Tool Configuration
-The command SHALL configure AI coding assistants with OpenSpec instructions using a grouped selection experience so teams can enable native integrations while always provisioning guidance for other assistants.
+The command SHALL configure AI coding assistants with OnSpec instructions using a grouped selection experience so teams can enable native integrations while always provisioning guidance for other assistants.
 
 #### Scenario: Prompting for AI tool selection
 - **WHEN** run interactively
@@ -56,7 +56,7 @@ The command SHALL configure AI coding assistants with OpenSpec instructions usin
 
 ### Requirement: AI Tool Configuration Details
 
-The command SHALL properly configure selected AI tools with OpenSpec-specific instructions using a marker system.
+The command SHALL properly configure selected AI tools with OnSpec-specific instructions using a marker system.
 
 #### Scenario: Configuring Claude Code
 
@@ -82,9 +82,9 @@ The command SHALL properly configure selected AI tools with OpenSpec-specific in
 - **THEN** create new file with stub instructions wrapped in markers so the full workflow stays in `openspec/AGENTS.md`:
 ```markdown
 <!-- OPENSPEC:START -->
-# OpenSpec Instructions
+# OnSpec Instructions
 
-This project uses OpenSpec to manage AI assistant workflows.
+This project uses OnSpec to manage AI assistant workflows.
 
 - Full guidance lives in '@/openspec/AGENTS.md'.
 - Keep this managed block so 'openspec update' can refresh the instructions.
@@ -106,7 +106,7 @@ The command SHALL perform safety checks to prevent overwriting existing structur
 
 #### Scenario: Detecting existing initialization
 - **WHEN** the `openspec/` directory already exists
-- **THEN** inform the user that OpenSpec is already initialized, skip recreating the base structure, and enter an extend mode
+- **THEN** inform the user that OnSpec is already initialized, skip recreating the base structure, and enter an extend mode
 - **AND** continue to the AI tool selection step so additional tools can be configured
 - **AND** display the existing-initialization error message only when the user declines to add any AI tools
 
@@ -116,7 +116,7 @@ The command SHALL provide clear, actionable next steps upon successful initializ
 
 #### Scenario: Displaying success message
 - **WHEN** initialization completes successfully
-- **THEN** include prompt: "Please explain the OpenSpec workflow from openspec/AGENTS.md and how I should work with you on this project"
+- **THEN** include prompt: "Please explain the OnSpec workflow from openspec/AGENTS.md and how I should work with you on this project"
 
 ### Requirement: Exit Codes
 
@@ -127,7 +127,7 @@ The command SHALL use consistent exit codes to indicate different failure modes.
 - **WHEN** the command completes
 - **THEN** return appropriate exit code:
   - 0: Success
-  - 1: General error (including when OpenSpec directory already exists)
+  - 1: General error (including when OnSpec directory already exists)
   - 2: Insufficient permissions (reserved for future use)
   - 3: User cancelled operation (reserved for future use)
 
@@ -137,7 +137,7 @@ The command SHALL use consistent exit codes to indicate different failure modes.
 #### Scenario: Configuring an extra tool after initial setup
 - **GIVEN** an `openspec/` directory already exists and at least one AI tool file is present
 - **WHEN** the user runs `openspec init` and selects a different supported AI tool
-- **THEN** generate that tool's configuration files with OpenSpec markers the same way as during first-time initialization
+- **THEN** generate that tool's configuration files with OnSpec markers the same way as during first-time initialization
 - **AND** leave existing tool configuration files unchanged except for managed sections that need refreshing
 - **AND** exit with code 0 and display a success summary highlighting the newly added tool files
 
@@ -153,7 +153,7 @@ The command SHALL use consistent exit codes to indicate different failure modes.
 `openspec init` SHALL treat extend mode without new native tool selections as a successful refresh.
 
 #### Scenario: Allowing empty extend runs
-- **WHEN** OpenSpec is already initialized and the user selects no additional natively supported tools
+- **WHEN** OnSpec is already initialized and the user selects no additional natively supported tools
 - **THEN** complete successfully while refreshing the root `AGENTS.md` stub
 - **AND** exit with code 0
 
@@ -164,72 +164,72 @@ The init command SHALL generate slash command files for supported editors using 
 - **WHEN** the user selects Claude Code during initialization
 - **THEN** create `.claude/commands/openspec/proposal.md`, `.claude/commands/openspec/apply.md`, and `.claude/commands/openspec/archive.md`
 - **AND** populate each file from shared templates so command text matches other tools
-- **AND** each template includes instructions for the relevant OpenSpec workflow stage
+- **AND** each template includes instructions for the relevant OnSpec workflow stage
 
 #### Scenario: Generating slash commands for CodeBuddy Code
 - **WHEN** the user selects CodeBuddy Code during initialization
 - **THEN** create `.codebuddy/commands/openspec/proposal.md`, `.codebuddy/commands/openspec/apply.md`, and `.codebuddy/commands/openspec/archive.md`
 - **AND** populate each file from shared templates so command text matches other tools
-- **AND** each template includes instructions for the relevant OpenSpec workflow stage
+- **AND** each template includes instructions for the relevant OnSpec workflow stage
 
 #### Scenario: Generating slash commands for Cline
 - **WHEN** the user selects Cline during initialization
 - **THEN** create `.clinerules/openspec-proposal.md`, `.clinerules/openspec-apply.md`, and `.clinerules/openspec-archive.md`
 - **AND** populate each file from shared templates so command text matches other tools
 - **AND** include Cline-specific Markdown heading frontmatter
-- **AND** each template includes instructions for the relevant OpenSpec workflow stage
+- **AND** each template includes instructions for the relevant OnSpec workflow stage
 
 #### Scenario: Generating slash commands for Crush
 - **WHEN** the user selects Crush during initialization
 - **THEN** create `.crush/commands/openspec/proposal.md`, `.crush/commands/openspec/apply.md`, and `.crush/commands/openspec/archive.md`
 - **AND** populate each file from shared templates so command text matches other tools
-- **AND** include Crush-specific frontmatter with OpenSpec category and tags
-- **AND** each template includes instructions for the relevant OpenSpec workflow stage
+- **AND** include Crush-specific frontmatter with OnSpec category and tags
+- **AND** each template includes instructions for the relevant OnSpec workflow stage
 
 #### Scenario: Generating slash commands for Cursor
 - **WHEN** the user selects Cursor during initialization
 - **THEN** create `.cursor/commands/openspec-proposal.md`, `.cursor/commands/openspec-apply.md`, and `.cursor/commands/openspec-archive.md`
 - **AND** populate each file from shared templates so command text matches other tools
-- **AND** each template includes instructions for the relevant OpenSpec workflow stage
+- **AND** each template includes instructions for the relevant OnSpec workflow stage
 
 #### Scenario: Generating slash commands for Factory Droid
 - **WHEN** the user selects Factory Droid during initialization
 - **THEN** create `.factory/commands/openspec-proposal.md`, `.factory/commands/openspec-apply.md`, and `.factory/commands/openspec-archive.md`
 - **AND** populate each file from shared templates that include Factory-compatible YAML frontmatter for the `description` and `argument-hint` fields
 - **AND** include the `$ARGUMENTS` placeholder in the template body so droid receives any user-supplied input
-- **AND** wrap the generated content in OpenSpec managed markers so `openspec update` can safely refresh the commands
+- **AND** wrap the generated content in OnSpec managed markers so `openspec update` can safely refresh the commands
 
 #### Scenario: Generating slash commands for OpenCode
 - **WHEN** the user selects OpenCode during initialization
 - **THEN** create `.opencode/commands/openspec-proposal.md`, `.opencode/commands/openspec-apply.md`, and `.opencode/commands/openspec-archive.md`
 - **AND** populate each file from shared templates so command text matches other tools
-- **AND** each template includes instructions for the relevant OpenSpec workflow stage
+- **AND** each template includes instructions for the relevant OnSpec workflow stage
 
 #### Scenario: Generating slash commands for Windsurf
 - **WHEN** the user selects Windsurf during initialization
 - **THEN** create `.windsurf/workflows/openspec-proposal.md`, `.windsurf/workflows/openspec-apply.md`, and `.windsurf/workflows/openspec-archive.md`
-- **AND** populate each file from shared templates (wrapped in OpenSpec markers) so workflow text matches other tools
-- **AND** each template includes instructions for the relevant OpenSpec workflow stage
+- **AND** populate each file from shared templates (wrapped in OnSpec markers) so workflow text matches other tools
+- **AND** each template includes instructions for the relevant OnSpec workflow stage
 
 #### Scenario: Generating slash commands for Kilo Code
 - **WHEN** the user selects Kilo Code during initialization
 - **THEN** create `.kilocode/workflows/openspec-proposal.md`, `.kilocode/workflows/openspec-apply.md`, and `.kilocode/workflows/openspec-archive.md`
-- **AND** populate each file from shared templates (wrapped in OpenSpec markers) so workflow text matches other tools
-- **AND** each template includes instructions for the relevant OpenSpec workflow stage
+- **AND** populate each file from shared templates (wrapped in OnSpec markers) so workflow text matches other tools
+- **AND** each template includes instructions for the relevant OnSpec workflow stage
 
 #### Scenario: Generating slash commands for Codex
 - **WHEN** the user selects Codex during initialization
 - **THEN** create global prompt files at `~/.codex/prompts/openspec-proposal.md`, `~/.codex/prompts/openspec-apply.md`, and `~/.codex/prompts/openspec-archive.md` (or under `$CODEX_HOME/prompts` if set)
 - **AND** populate each file from shared templates that map the first numbered placeholder (`$1`) to the primary user input (e.g., change identifier or question text)
-- **AND** wrap the generated content in OpenSpec markers so `openspec update` can refresh the prompts without touching surrounding custom notes
+- **AND** wrap the generated content in OnSpec markers so `openspec update` can refresh the prompts without touching surrounding custom notes
 
 #### Scenario: Generating slash commands for GitHub Copilot
 - **WHEN** the user selects GitHub Copilot during initialization
 - **THEN** create `.github/prompts/openspec-proposal.prompt.md`, `.github/prompts/openspec-apply.prompt.md`, and `.github/prompts/openspec-archive.prompt.md`
 - **AND** populate each file with YAML frontmatter containing a `description` field that summarizes the workflow stage
 - **AND** include `$ARGUMENTS` placeholder to capture user input
-- **AND** wrap the shared template body with OpenSpec markers so `openspec update` can refresh the content
-- **AND** each template includes instructions for the relevant OpenSpec workflow stage
+- **AND** wrap the shared template body with OnSpec markers so `openspec update` can refresh the content
+- **AND** each template includes instructions for the relevant OnSpec workflow stage
 
 ### Requirement: Non-Interactive Mode
 The command SHALL support non-interactive operation through command-line options for automation and CI/CD use cases.
@@ -247,7 +247,7 @@ The command SHALL support non-interactive operation through command-line options
 #### Scenario: Skip tool configuration non-interactively
 - **WHEN** run with `--tools none`
 - **THEN** skip AI tool configuration entirely
-- **AND** only create the OpenSpec directory structure and template files
+- **AND** only create the OnSpec directory structure and template files
 
 #### Scenario: Invalid tool specification
 - **WHEN** run with `--tools` containing any IDs not present in the AI tool registry
@@ -258,7 +258,7 @@ The command SHALL support non-interactive operation through command-line options
 - **THEN** show the `--tools` option description with the valid values derived from the AI tool registry
 
 ### Requirement: Root instruction stub
-`openspec init` SHALL always scaffold the root-level `AGENTS.md` hand-off so every teammate finds the primary OpenSpec instructions.
+`openspec init` SHALL always scaffold the root-level `AGENTS.md` hand-off so every teammate finds the primary OnSpec instructions.
 
 #### Scenario: Creating root `AGENTS.md`
 - **GIVEN** the project may or may not already contain an `AGENTS.md` file
@@ -269,7 +269,7 @@ The command SHALL support non-interactive operation through command-line options
 
 ## Why
 
-Manual creation of OpenSpec structure is error-prone and creates adoption friction. A standardized init command ensures:
+Manual creation of OnSpec structure is error-prone and creates adoption friction. A standardized init command ensures:
 - Consistent structure across all projects
 - Proper AI instruction files are always included
 - Quick onboarding for new projects

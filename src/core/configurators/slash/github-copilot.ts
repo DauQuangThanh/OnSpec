@@ -9,17 +9,17 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
 
 const FRONTMATTER: Record<SlashCommandId, string> = {
   proposal: `---
-description: Scaffold a new OpenSpec change and validate strictly.
+description: Scaffold a new OnSpec change and validate strictly.
 ---
 
 $ARGUMENTS`,
   apply: `---
-description: Implement an approved OpenSpec change and keep tasks in sync.
+description: Implement an approved OnSpec change and keep tasks in sync.
 ---
 
 $ARGUMENTS`,
   archive: `---
-description: Archive a deployed OpenSpec change and update specs.
+description: Archive a deployed OnSpec change and update specs.
 ---
 
 $ARGUMENTS`

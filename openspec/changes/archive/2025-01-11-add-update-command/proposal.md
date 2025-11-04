@@ -2,17 +2,17 @@
 
 ## Why
 
-Users need a way to update their local OpenSpec instructions (README.md and CLAUDE.md) when the OpenSpec package releases new versions with improved AI agent instructions or structural conventions.
+Users need a way to update their local OnSpec instructions (README.md and CLAUDE.md) when the OnSpec package releases new versions with improved AI agent instructions or structural conventions.
 
 ## What Changes
 
-- Add new `openspec update` CLI command that updates OpenSpec instructions
+- Add new `openspec update` CLI command that updates OnSpec instructions
 - Replace `openspec/README.md` with the latest template
-  - Safe because this file is fully OpenSpec-managed
-- Update only the OpenSpec-managed block in `CLAUDE.md` using markers
+  - Safe because this file is fully OnSpec-managed
+- Update only the OnSpec-managed block in `CLAUDE.md` using markers
   - Preserve all user content outside markers
   - If `CLAUDE.md` is missing, create it with the managed block
-- Display success message after update (ASCII-safe): "Updated OpenSpec instructions"
+- Display success message after update (ASCII-safe): "Updated OnSpec instructions"
   - A leading checkmark MAY be shown when the terminal supports it
   - Operation is idempotent (re-running yields identical results)
 

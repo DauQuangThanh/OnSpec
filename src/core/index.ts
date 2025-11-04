@@ -1,2 +1,2 @@
-// Core OpenSpec logic will be implemented here
+// Core OnSpec logic will be implemented here
 export {};

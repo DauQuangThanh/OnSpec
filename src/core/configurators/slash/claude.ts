@@ -9,21 +9,21 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
 
 const FRONTMATTER: Record<SlashCommandId, string> = {
   proposal: `---
-name: OpenSpec: Proposal
-description: Scaffold a new OpenSpec change and validate strictly.
-category: OpenSpec
+name: OnSpec: Proposal
+description: Scaffold a new OnSpec change and validate strictly.
+category: OnSpec
 tags: [openspec, change]
 ---`,
   apply: `---
-name: OpenSpec: Apply
-description: Implement an approved OpenSpec change and keep tasks in sync.
-category: OpenSpec
+name: OnSpec: Apply
+description: Implement an approved OnSpec change and keep tasks in sync.
+category: OnSpec
 tags: [openspec, apply]
 ---`,
   archive: `---
-name: OpenSpec: Archive
-description: Archive a deployed OpenSpec change and update specs.
-category: OpenSpec
+name: OnSpec: Archive
+description: Archive a deployed OnSpec change and update specs.
+category: OnSpec
 tags: [openspec, archive]
 ---`
 };

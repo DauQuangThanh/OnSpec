@@ -24,7 +24,7 @@ describe('ArchiveCommand', () => {
     // Change to temp directory
     process.chdir(tempDir);
     
-    // Create OpenSpec structure
+    // Create OnSpec structure
     const openspecDir = path.join(tempDir, 'openspec');
     await fs.mkdir(path.join(openspecDir, 'changes'), { recursive: true });
     await fs.mkdir(path.join(openspecDir, 'specs'), { recursive: true });
@@ -589,7 +589,7 @@ E1 updated`);
       
       await expect(
         archiveCommand.execute('any-change', { yes: true })
-      ).rejects.toThrow("No OpenSpec changes directory found. Run 'openspec init' first.");
+      ).rejects.toThrow("No OnSpec changes directory found. Run 'openspec init' first.");
     });
   });
 

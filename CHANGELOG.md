@@ -44,7 +44,7 @@
 
 ### Minor Changes
 
-- 312e1d6: Add Amazon Q Developer CLI integration. OpenSpec now supports Amazon Q Developer with automatic prompt generation in `.amazonq/prompts/` directory, allowing you to use OpenSpec slash commands with Amazon Q's @-syntax.
+- 312e1d6: Add Amazon Q Developer CLI integration. OnSpec now supports Amazon Q Developer with automatic prompt generation in `.amazonq/prompts/` directory, allowing you to use OnSpec slash commands with Amazon Q's @-syntax.
 
 ## 0.10.0
 
@@ -56,13 +56,13 @@
 
 ### Patch Changes
 
-- 2ae0484: Fix cross-platform path handling issues. This release includes fixes for joinPath behavior and slash command path resolution to ensure OpenSpec works correctly across all platforms.
+- 2ae0484: Fix cross-platform path handling issues. This release includes fixes for joinPath behavior and slash command path resolution to ensure OnSpec works correctly across all platforms.
 
 ## 0.9.1
 
 ### Patch Changes
 
-- 8210970: Fix OpenSpec not working on Windows when Codex integration is selected. This release includes fixes for cross-platform path handling and normalization to ensure OpenSpec works correctly on Windows systems.
+- 8210970: Fix OnSpec not working on Windows when Codex integration is selected. This release includes fixes for cross-platform path handling and normalization to ensure OnSpec works correctly on Windows systems.
 
 ## 0.9.0
 
@@ -74,7 +74,7 @@
 
 ### Minor Changes
 
-- Add GitHub Copilot slash command support. OpenSpec now writes prompts to `.github/prompts/openspec-{proposal,apply,archive}.prompt.md` with YAML frontmatter and `$ARGUMENTS` placeholder, and refreshes them on `openspec update`.
+- Add GitHub Copilot slash command support. OnSpec now writes prompts to `.github/prompts/openspec-{proposal,apply,archive}.prompt.md` with YAML frontmatter and `$ARGUMENTS` placeholder, and refreshes them on `openspec update`.
 
 ## 0.8.1
 
@@ -87,7 +87,7 @@
 ### Minor Changes
 
 - c29b06d: Add Windsurf support.
-- Add Codex slash command support. OpenSpec now writes prompts directly to Codex's global directory (`~/.codex/prompts` or `$CODEX_HOME/prompts`) and refreshes them on `openspec update`.
+- Add Codex slash command support. OnSpec now writes prompts directly to Codex's global directory (`~/.codex/prompts` or `$CODEX_HOME/prompts`) and refreshes them on `openspec update`.
 
 ## 0.7.0
 
@@ -130,7 +130,7 @@
 
 ### Minor Changes
 
-- Add OpenSpec change proposals for CLI improvements and enhanced user experience
+- Add OnSpec change proposals for CLI improvements and enhanced user experience
 - Add Opencode slash commands support for AI-driven development workflows
 
 ### Patch Changes

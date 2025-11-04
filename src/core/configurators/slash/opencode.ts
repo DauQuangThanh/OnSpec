@@ -12,7 +12,7 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
 const FRONTMATTER: Record<SlashCommandId, string> = {
   proposal: `---
 agent: build
-description: Scaffold a new OpenSpec change and validate strictly.
+description: Scaffold a new OnSpec change and validate strictly.
 ---
 The user has requested the following change proposal. Use the openspec instructions to create their change proposal.
 <UserRequest>
@@ -21,7 +21,7 @@ The user has requested the following change proposal. Use the openspec instructi
 `,
   apply: `---
 agent: build
-description: Implement an approved OpenSpec change and keep tasks in sync.
+description: Implement an approved OnSpec change and keep tasks in sync.
 ---
 The user has requested to implement the following change proposal. Find the change proposal and follow the instructions below. If you're not sure or if ambiguous, ask for clarification from the user.
 <UserRequest>
@@ -30,7 +30,7 @@ The user has requested to implement the following change proposal. Find the chan
 `,
   archive: `---
 agent: build
-description: Archive a deployed OpenSpec change and update specs.
+description: Archive a deployed OnSpec change and update specs.
 ---
 <ChangeId>
   $ARGUMENTS

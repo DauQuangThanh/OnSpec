@@ -39,7 +39,7 @@ const toolsOptionDescription = `Configure AI tools non-interactively. Use "all",
 
 program
   .command('init [path]')
-  .description('Initialize OpenSpec in your project')
+  .description('Initialize OnSpec in your project')
   .option('--tools <tools>', toolsOptionDescription)
   .action(async (targetPath = '.', options?: { tools?: string }) => {
     try {
@@ -75,7 +75,7 @@ program
 
 program
   .command('update [path]')
-  .description('Update OpenSpec instruction files')
+  .description('Update OnSpec instruction files')
   .action(async (targetPath = '.') => {
     try {
       const resolvedPath = path.resolve(targetPath);
@@ -122,7 +122,7 @@ program
 // Change command with subcommands
 const changeCmd = program
   .command('change')
-  .description('Manage OpenSpec change proposals');
+  .description('Manage OnSpec change proposals');
 
 // Deprecation notice for noun-based commands
 changeCmd.hook('preAction', () => {

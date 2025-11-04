@@ -9,7 +9,7 @@ The CLI SHALL expose an `openspec scaffold <change-id>` command that validates t
 - **AND** exit with code 0 after successful scaffolding
 
 ### Requirement: Change Directory Structure
-The scaffold command SHALL create the standard change workspace with proposal, tasks, optional design, and delta directories laid out according to OpenSpec conventions.
+The scaffold command SHALL create the standard change workspace with proposal, tasks, optional design, and delta directories laid out according to OnSpec conventions.
 
 #### Scenario: Generating change workspace
 - **WHEN** scaffolding a new change with id `add-user-notifications`
@@ -18,7 +18,7 @@ The scaffold command SHALL create the standard change workspace with proposal, t
 - **AND** create `openspec/changes/add-user-notifications/specs/` ready for capability-specific deltas
 
 ### Requirement: Template Content Guidance
-The scaffold command SHALL populate generated Markdown files with OpenSpec-compliant templates so authors can copy, edit, and pass validation without reformatting.
+The scaffold command SHALL populate generated Markdown files with OnSpec-compliant templates so authors can copy, edit, and pass validation without reformatting.
 
 #### Scenario: Populating proposal and tasks templates
 - **WHEN** the scaffold command writes `proposal.md`

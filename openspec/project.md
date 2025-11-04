@@ -1,6 +1,6 @@
-# OpenSpec Project Overview
+# OnSpec Project Overview
 
-A minimal CLI tool that helps developers set up OpenSpec file structures and keep AI instructions updated. The AI tools themselves handle all the change management complexity by working directly with markdown files.
+A minimal CLI tool that helps developers set up OnSpec file structures and keep AI instructions updated. The AI tools themselves handle all the change management complexity by working directly with markdown files.
 
 ## Technology Stack
 - Language: TypeScript
@@ -14,7 +14,7 @@ A minimal CLI tool that helps developers set up OpenSpec file structures and kee
 ```
 src/
 ├── cli/        # CLI command implementations
-├── core/       # Core OpenSpec logic (templates, structure)
+├── core/       # Core OnSpec logic (templates, structure)
 └── utils/      # Shared utilities (file operations, rollback)
 
 dist/           # Compiled output (gitignored)
@@ -50,4 +50,4 @@ dist/           # Compiled output (gitignored)
 - Run `pnpm run build` to compile TypeScript
 - Run `pnpm run dev` for development mode
 - Test locally with `pnpm link`
-- Follow OpenSpec's own change-driven development process
+- Follow OnSpec's own change-driven development process

@@ -1,5 +1,5 @@
 <!-- OPENSPEC:START -->
-# OpenSpec Instructions
+# OnSpec Instructions
 
 These instructions are for AI assistants working in this project.
 

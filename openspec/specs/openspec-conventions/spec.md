@@ -1,23 +1,23 @@
-# OpenSpec Conventions Specification
+# OnSpec Conventions Specification
 
 ## Purpose
 
-OpenSpec conventions SHALL define how system capabilities are documented, how changes are proposed and tracked, and how specifications evolve over time. This meta-specification serves as the source of truth for OpenSpec's own conventions.
+OnSpec conventions SHALL define how system capabilities are documented, how changes are proposed and tracked, and how specifications evolve over time. This meta-specification serves as the source of truth for OnSpec's own conventions.
 ## Requirements
 ### Requirement: Structured conventions for specs and changes
 
-OpenSpec conventions SHALL mandate a structured spec format with clear requirement and scenario sections so tooling can parse consistently.
+OnSpec conventions SHALL mandate a structured spec format with clear requirement and scenario sections so tooling can parse consistently.
 
 #### Scenario: Following the structured spec format
 
-- **WHEN** writing or updating OpenSpec specifications
+- **WHEN** writing or updating OnSpec specifications
 - **THEN** authors SHALL use `### Requirement: ...` followed by at least one `#### Scenario: ...` section
 
 ### Requirement: Project Structure
-An OpenSpec project SHALL maintain a consistent directory structure for specifications and changes.
+An OnSpec project SHALL maintain a consistent directory structure for specifications and changes.
 
 #### Scenario: Initializing project structure
-- **WHEN** an OpenSpec project is initialized
+- **WHEN** an OnSpec project is initialized
 - **THEN** it SHALL have this structure:
 ```
 openspec/
@@ -205,7 +205,7 @@ Behavioral specifications SHALL adopt the structured format with `### Requiremen
 - **AND** use `#### Scenario:` for scenarios with bold WHEN/THEN/AND keywords
 
 ### Requirement: Verb–Noun CLI Command Structure
-OpenSpec CLI design SHALL use verbs as top-level commands with nouns provided as arguments or flags for scoping.
+OnSpec CLI design SHALL use verbs as top-level commands with nouns provided as arguments or flags for scoping.
 
 #### Scenario: Verb-first command discovery
 - **WHEN** a user runs a command like `openspec list`
@@ -234,11 +234,11 @@ The system SHALL follow these principles:
 
 ### Requirement: Project Structure
 
-An OpenSpec project SHALL maintain a consistent directory structure for specifications and changes.
+An OnSpec project SHALL maintain a consistent directory structure for specifications and changes.
 
 #### Scenario: Initializing project structure
 
-- **WHEN** an OpenSpec project is initialized
+- **WHEN** an OnSpec project is initialized
 - **THEN** it SHALL have this structure:
 ```
 openspec/

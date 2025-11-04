@@ -3,7 +3,7 @@ import { SlashCommandId } from '../../templates/index.js';
 
 /**
  * File paths for Qoder slash commands
- * Maps each OpenSpec workflow stage to its command file location
+ * Maps each OnSpec workflow stage to its command file location
  * Commands are stored in .qoder/commands/openspec/ directory
  */
 const FILE_PATHS: Record<SlashCommandId, string> = {
@@ -24,21 +24,21 @@ const FILE_PATHS: Record<SlashCommandId, string> = {
  */
 const FRONTMATTER: Record<SlashCommandId, string> = {
   proposal: `---
-name: OpenSpec: Proposal
-description: Scaffold a new OpenSpec change and validate strictly.
-category: OpenSpec
+name: OnSpec: Proposal
+description: Scaffold a new OnSpec change and validate strictly.
+category: OnSpec
 tags: [openspec, change]
 ---`,
   apply: `---
-name: OpenSpec: Apply
-description: Implement an approved OpenSpec change and keep tasks in sync.
-category: OpenSpec
+name: OnSpec: Apply
+description: Implement an approved OnSpec change and keep tasks in sync.
+category: OnSpec
 tags: [openspec, apply]
 ---`,
   archive: `---
-name: OpenSpec: Archive
-description: Archive a deployed OpenSpec change and update specs.
-category: OpenSpec
+name: OnSpec: Archive
+description: Archive a deployed OnSpec change and update specs.
+category: OnSpec
 tags: [openspec, archive]
 ---`
 };
@@ -46,7 +46,7 @@ tags: [openspec, archive]
 /**
  * Qoder Slash Command Configurator
  * 
- * Manages OpenSpec slash commands for Qoder AI assistant.
+ * Manages OnSpec slash commands for Qoder AI assistant.
  * Creates three workflow commands: proposal, apply, and archive.
  * Uses colon-separated command format (/openspec:proposal).
  * 

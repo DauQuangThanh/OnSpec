@@ -1,4 +1,4 @@
-export const agentsRootStubTemplate = `# OpenSpec Instructions
+export const agentsRootStubTemplate = `# OnSpec Instructions
 
 These instructions are for AI assistants working in this project.
 

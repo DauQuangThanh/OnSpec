@@ -1,4 +1,4 @@
-# OpenSpec Conventions Specification
+# OnSpec Conventions Specification
 
 ## ADDED Requirements
 
@@ -14,7 +14,7 @@ Behavioral specifications SHALL adopt the structured format with `### Requiremen
 
 ## Purpose
 
-OpenSpec conventions SHALL define how system capabilities are documented, how changes are proposed and tracked, and how specifications evolve over time. This meta-specification serves as the source of truth for OpenSpec's own conventions.
+OnSpec conventions SHALL define how system capabilities are documented, how changes are proposed and tracked, and how specifications evolve over time. This meta-specification serves as the source of truth for OnSpec's own conventions.
 
 ## Core Principles
 
@@ -26,7 +26,7 @@ The system SHALL follow these principles:
 
 ## Directory Structure
 
-WHEN an OpenSpec project is initialized
+WHEN an OnSpec project is initialized
 THEN it SHALL have this structure:
 ```
 openspec/

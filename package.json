@@ -9,13 +9,13 @@
     "ai",
     "development"
   ],
-  "homepage": "https://github.com/Fission-AI/OpenSpec",
+  "homepage": "https://github.com/DauQuangThanh/OnSpec",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Fission-AI/OpenSpec"
+    "url": "https://github.com/DauQuangThanh/OnSpec"
   },
   "license": "MIT",
-  "author": "OpenSpec Contributors",
+  "author": "OnSpec Contributors",
   "type": "module",
   "publishConfig": {
     "access": "public"

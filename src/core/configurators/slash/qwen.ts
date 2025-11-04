@@ -1,5 +1,5 @@
 /**
- * Qwen slash command configurator for OpenSpec integration.
+ * Qwen slash command configurator for OnSpec integration.
  * This class handles the generation of Qwen-specific slash command files
  * in the .qwen/commands directory structure.
  * 
@@ -27,20 +27,20 @@ const FRONTMATTER: Record<SlashCommandId, string> = {
   proposal: `---
 name: /openspec-proposal
 id: openspec-proposal
-category: OpenSpec
-description: Scaffold a new OpenSpec change and validate strictly.
+category: OnSpec
+description: Scaffold a new OnSpec change and validate strictly.
 ---`,
   apply: `---
 name: /openspec-apply
 id: openspec-apply
-category: OpenSpec
-description: Implement an approved OpenSpec change and keep tasks in sync.
+category: OnSpec
+description: Implement an approved OnSpec change and keep tasks in sync.
 ---`,
   archive: `---
 name: /openspec-archive
 id: openspec-archive
-category: OpenSpec
-description: Archive a deployed OpenSpec change and update specs.
+category: OnSpec
+description: Archive a deployed OnSpec change and update specs.
 ---`
 };
 
@@ -49,9 +49,9 @@ description: Archive a deployed OpenSpec change and update specs.
  * by creating the necessary slash command files in the .qwen/commands directory.
  * 
  * The slash commands include:
- * - /openspec-proposal: Create an OpenSpec change proposal
- * - /openspec-apply: Apply an approved OpenSpec change
- * - /openspec-archive: Archive a deployed OpenSpec change
+ * - /openspec-proposal: Create an OnSpec change proposal
+ * - /openspec-apply: Apply an approved OnSpec change
+ * - /openspec-archive: Archive a deployed OnSpec change
  */
 export class QwenSlashCommandConfigurator extends SlashCommandConfigurator {
   /** Unique identifier for the Qwen tool */

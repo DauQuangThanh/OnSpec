@@ -61,7 +61,7 @@ describe('InitCommand', () => {
   });
 
   describe('execute', () => {
-    it('should create OpenSpec directory structure', async () => {
+    it('should create OnSpec directory structure', async () => {
       queueSelections('claude', DONE);
 
       await initCommand.execute(testDir);
@@ -94,7 +94,7 @@ describe('InitCommand', () => {
         path.join(openspecPath, 'AGENTS.md'),
         'utf-8'
       );
-      expect(agentsContent).toContain('OpenSpec Instructions');
+      expect(agentsContent).toContain('OnSpec Instructions');
 
       const projectContent = await fs.readFile(
         path.join(openspecPath, 'project.md'),
@@ -193,21 +193,21 @@ describe('InitCommand', () => {
 
       const proposalContent = await fs.readFile(wsProposal, 'utf-8');
       expect(proposalContent).toContain('---');
-      expect(proposalContent).toContain('description: Scaffold a new OpenSpec change and validate strictly.');
+      expect(proposalContent).toContain('description: Scaffold a new OnSpec change and validate strictly.');
       expect(proposalContent).toContain('auto_execution_mode: 3');
       expect(proposalContent).toContain('<!-- OPENSPEC:START -->');
       expect(proposalContent).toContain('**Guardrails**');
 
       const applyContent = await fs.readFile(wsApply, 'utf-8');
       expect(applyContent).toContain('---');
-      expect(applyContent).toContain('description: Implement an approved OpenSpec change and keep tasks in sync.');
+      expect(applyContent).toContain('description: Implement an approved OnSpec change and keep tasks in sync.');
       expect(applyContent).toContain('auto_execution_mode: 3');
       expect(applyContent).toContain('<!-- OPENSPEC:START -->');
       expect(applyContent).toContain('Work through tasks sequentially');
 
       const archiveContent = await fs.readFile(wsArchive, 'utf-8');
       expect(archiveContent).toContain('---');
-      expect(archiveContent).toContain('description: Archive a deployed OpenSpec change and update specs.');
+      expect(archiveContent).toContain('description: Archive a deployed OnSpec change and update specs.');
       expect(archiveContent).toContain('auto_execution_mode: 3');
       expect(archiveContent).toContain('<!-- OPENSPEC:START -->');
       expect(archiveContent).toContain('Run `openspec archive <id> --yes`');
@@ -254,16 +254,16 @@ describe('InitCommand', () => {
       expect(await fileExists(claudeArchive)).toBe(true);
 
       const proposalContent = await fs.readFile(claudeProposal, 'utf-8');
-      expect(proposalContent).toContain('name: OpenSpec: Proposal');
+      expect(proposalContent).toContain('name: OnSpec: Proposal');
       expect(proposalContent).toContain('<!-- OPENSPEC:START -->');
       expect(proposalContent).toContain('**Guardrails**');
 
       const applyContent = await fs.readFile(claudeApply, 'utf-8');
-      expect(applyContent).toContain('name: OpenSpec: Apply');
+      expect(applyContent).toContain('name: OnSpec: Apply');
       expect(applyContent).toContain('Work through tasks sequentially');
 
       const archiveContent = await fs.readFile(claudeArchive, 'utf-8');
-      expect(archiveContent).toContain('name: OpenSpec: Archive');
+      expect(archiveContent).toContain('name: OnSpec: Archive');
       expect(archiveContent).toContain('openspec archive <id>');
       expect(archiveContent).toContain(
         '`--skip-specs` only for tooling-only work'
@@ -330,21 +330,21 @@ describe('InitCommand', () => {
       const proposalContent = await fs.readFile(openCodeProposal, 'utf-8');
       expect(proposalContent).toContain('agent: build');
       expect(proposalContent).toContain(
-        'description: Scaffold a new OpenSpec change and validate strictly.'
+        'description: Scaffold a new OnSpec change and validate strictly.'
       );
       expect(proposalContent).toContain('<!-- OPENSPEC:START -->');
 
       const applyContent = await fs.readFile(openCodeApply, 'utf-8');
       expect(applyContent).toContain('agent: build');
       expect(applyContent).toContain(
-        'description: Implement an approved OpenSpec change and keep tasks in sync.'
+        'description: Implement an approved OnSpec change and keep tasks in sync.'
       );
       expect(applyContent).toContain('Work through tasks sequentially');
 
       const archiveContent = await fs.readFile(openCodeArchive, 'utf-8');
       expect(archiveContent).toContain('agent: build');
       expect(archiveContent).toContain(
-        'description: Archive a deployed OpenSpec change and update specs.'
+        'description: Archive a deployed OnSpec change and update specs.'
       );
       expect(archiveContent).toContain('openspec list --specs');
     });
@@ -380,20 +380,20 @@ describe('InitCommand', () => {
 
       const proposalContent = await fs.readFile(proposalPath, 'utf-8');
       expect(proposalContent).toContain('name: /openspec-proposal');
-      expect(proposalContent).toContain('category: OpenSpec');
-      expect(proposalContent).toContain('description: Scaffold a new OpenSpec change and validate strictly.');
+      expect(proposalContent).toContain('category: OnSpec');
+      expect(proposalContent).toContain('description: Scaffold a new OnSpec change and validate strictly.');
       expect(proposalContent).toContain('<!-- OPENSPEC:START -->');
 
       const applyContent = await fs.readFile(applyPath, 'utf-8');
       expect(applyContent).toContain('name: /openspec-apply');
-      expect(applyContent).toContain('category: OpenSpec');
-      expect(applyContent).toContain('description: Implement an approved OpenSpec change and keep tasks in sync.');
+      expect(applyContent).toContain('category: OnSpec');
+      expect(applyContent).toContain('description: Implement an approved OnSpec change and keep tasks in sync.');
       expect(applyContent).toContain('Work through tasks sequentially');
 
       const archiveContent = await fs.readFile(archivePath, 'utf-8');
       expect(archiveContent).toContain('name: /openspec-archive');
-      expect(archiveContent).toContain('category: OpenSpec');
-      expect(archiveContent).toContain('description: Archive a deployed OpenSpec change and update specs.');
+      expect(archiveContent).toContain('category: OnSpec');
+      expect(archiveContent).toContain('description: Archive a deployed OnSpec change and update specs.');
       expect(archiveContent).toContain('openspec archive <id>');
     });
 
@@ -437,19 +437,19 @@ describe('InitCommand', () => {
       expect(await fileExists(clineArchive)).toBe(true);
 
       const proposalContent = await fs.readFile(clineProposal, 'utf-8');
-      expect(proposalContent).toContain('# OpenSpec: Proposal');
-      expect(proposalContent).toContain('Scaffold a new OpenSpec change and validate strictly.');
+      expect(proposalContent).toContain('# OnSpec: Proposal');
+      expect(proposalContent).toContain('Scaffold a new OnSpec change and validate strictly.');
       expect(proposalContent).toContain('<!-- OPENSPEC:START -->');
       expect(proposalContent).toContain('**Guardrails**');
 
       const applyContent = await fs.readFile(clineApply, 'utf-8');
-      expect(applyContent).toContain('# OpenSpec: Apply');
-      expect(applyContent).toContain('Implement an approved OpenSpec change and keep tasks in sync.');
+      expect(applyContent).toContain('# OnSpec: Apply');
+      expect(applyContent).toContain('Implement an approved OnSpec change and keep tasks in sync.');
       expect(applyContent).toContain('Work through tasks sequentially');
 
       const archiveContent = await fs.readFile(clineArchive, 'utf-8');
-      expect(archiveContent).toContain('# OpenSpec: Archive');
-      expect(archiveContent).toContain('Archive a deployed OpenSpec change and update specs.');
+      expect(archiveContent).toContain('# OnSpec: Archive');
+      expect(archiveContent).toContain('Archive a deployed OnSpec change and update specs.');
       expect(archiveContent).toContain('openspec archive <id>');
     });
 
@@ -476,7 +476,7 @@ describe('InitCommand', () => {
       expect(await fileExists(factoryArchive)).toBe(true);
 
       const proposalContent = await fs.readFile(factoryProposal, 'utf-8');
-      expect(proposalContent).toContain('description: Scaffold a new OpenSpec change and validate strictly.');
+      expect(proposalContent).toContain('description: Scaffold a new OnSpec change and validate strictly.');
       expect(proposalContent).toContain('argument-hint: request or feature description');
       expect(proposalContent).toContain('<!-- OPENSPEC:START -->');
       expect(
@@ -486,7 +486,7 @@ describe('InitCommand', () => {
       ).toContain('$ARGUMENTS');
 
       const applyContent = await fs.readFile(factoryApply, 'utf-8');
-      expect(applyContent).toContain('description: Implement an approved OpenSpec change and keep tasks in sync.');
+      expect(applyContent).toContain('description: Implement an approved OnSpec change and keep tasks in sync.');
       expect(applyContent).toContain('argument-hint: change-id');
       expect(applyContent).toContain('Work through tasks sequentially');
       expect(
@@ -496,7 +496,7 @@ describe('InitCommand', () => {
       ).toContain('$ARGUMENTS');
 
       const archiveContent = await fs.readFile(factoryArchive, 'utf-8');
-      expect(archiveContent).toContain('description: Archive a deployed OpenSpec change and update specs.');
+      expect(archiveContent).toContain('description: Archive a deployed OnSpec change and update specs.');
       expect(archiveContent).toContain('argument-hint: change-id');
       expect(archiveContent).toContain('openspec archive <id> --yes');
       expect(
@@ -529,20 +529,20 @@ describe('InitCommand', () => {
       expect(await fileExists(archivePath)).toBe(true);
 
       const proposalContent = await fs.readFile(proposalPath, 'utf-8');
-      expect(proposalContent).toContain('description: Scaffold a new OpenSpec change and validate strictly.');
+      expect(proposalContent).toContain('description: Scaffold a new OnSpec change and validate strictly.');
       expect(proposalContent).toContain('argument-hint: request or feature description');
       expect(proposalContent).toContain('$ARGUMENTS');
       expect(proposalContent).toContain('<!-- OPENSPEC:START -->');
       expect(proposalContent).toContain('**Guardrails**');
 
       const applyContent = await fs.readFile(applyPath, 'utf-8');
-      expect(applyContent).toContain('description: Implement an approved OpenSpec change and keep tasks in sync.');
+      expect(applyContent).toContain('description: Implement an approved OnSpec change and keep tasks in sync.');
       expect(applyContent).toContain('argument-hint: change-id');
       expect(applyContent).toContain('$ARGUMENTS');
       expect(applyContent).toContain('Work through tasks sequentially');
 
       const archiveContent = await fs.readFile(archivePath, 'utf-8');
-      expect(archiveContent).toContain('description: Archive a deployed OpenSpec change and update specs.');
+      expect(archiveContent).toContain('description: Archive a deployed OnSpec change and update specs.');
       expect(archiveContent).toContain('argument-hint: change-id');
       expect(archiveContent).toContain('$ARGUMENTS');
       expect(archiveContent).toContain('openspec archive <id> --yes');
@@ -608,25 +608,25 @@ describe('InitCommand', () => {
 
       const proposalContent = await fs.readFile(proposalPath, 'utf-8');
       expect(proposalContent).toContain('---');
-      expect(proposalContent).toContain('description: Scaffold a new OpenSpec change and validate strictly.');
+      expect(proposalContent).toContain('description: Scaffold a new OnSpec change and validate strictly.');
       expect(proposalContent).toContain('$ARGUMENTS');
       expect(proposalContent).toContain('<!-- OPENSPEC:START -->');
       expect(proposalContent).toContain('**Guardrails**');
 
       const applyContent = await fs.readFile(applyPath, 'utf-8');
       expect(applyContent).toContain('---');
-      expect(applyContent).toContain('description: Implement an approved OpenSpec change and keep tasks in sync.');
+      expect(applyContent).toContain('description: Implement an approved OnSpec change and keep tasks in sync.');
       expect(applyContent).toContain('$ARGUMENTS');
       expect(applyContent).toContain('Work through tasks sequentially');
 
       const archiveContent = await fs.readFile(archivePath, 'utf-8');
       expect(archiveContent).toContain('---');
-      expect(archiveContent).toContain('description: Archive a deployed OpenSpec change and update specs.');
+      expect(archiveContent).toContain('description: Archive a deployed OnSpec change and update specs.');
       expect(archiveContent).toContain('$ARGUMENTS');
       expect(archiveContent).toContain('openspec archive <id> --yes');
     });
 
-    it('should add new tool when OpenSpec already exists', async () => {
+    it('should add new tool when OnSpec already exists', async () => {
       queueSelections('claude', DONE, 'cursor', DONE);
       await initCommand.execute(testDir);
       await initCommand.execute(testDir);
@@ -649,7 +649,7 @@ describe('InitCommand', () => {
         testDir,
         initCommand,
         'openspec/AGENTS.md',
-        'OpenSpec Instructions'
+        'OnSpec Instructions'
       );
     });
 
@@ -679,7 +679,7 @@ describe('InitCommand', () => {
 
       const content = await fs.readFile(agentsPath, 'utf-8');
       expect(content).toBe(customContent);
-      expect(content).not.toContain('OpenSpec Instructions');
+      expect(content).not.toContain('OnSpec Instructions');
     });
 
     it('should handle non-existent target directory', async () => {
@@ -847,14 +847,14 @@ describe('InitCommand', () => {
 
       const proposalContent = await fs.readFile(proposalPath, 'utf-8');
       expect(proposalContent).toContain('---');
-      expect(proposalContent).toContain('description: Scaffold a new OpenSpec change and validate strictly.');
+      expect(proposalContent).toContain('description: Scaffold a new OnSpec change and validate strictly.');
       expect(proposalContent).toContain('$ARGUMENTS');
       expect(proposalContent).toContain('<!-- OPENSPEC:START -->');
       expect(proposalContent).toContain('**Guardrails**');
 
       const applyContent = await fs.readFile(applyPath, 'utf-8');
       expect(applyContent).toContain('---');
-      expect(applyContent).toContain('description: Implement an approved OpenSpec change and keep tasks in sync.');
+      expect(applyContent).toContain('description: Implement an approved OnSpec change and keep tasks in sync.');
       expect(applyContent).toContain('$ARGUMENTS');
       expect(applyContent).toContain('<!-- OPENSPEC:START -->');
     });
@@ -895,20 +895,20 @@ describe('InitCommand', () => {
 
       const proposalContent = await fs.readFile(auggieProposal, 'utf-8');
       expect(proposalContent).toContain('---');
-      expect(proposalContent).toContain('description: Scaffold a new OpenSpec change and validate strictly.');
+      expect(proposalContent).toContain('description: Scaffold a new OnSpec change and validate strictly.');
       expect(proposalContent).toContain('argument-hint: feature description or request');
       expect(proposalContent).toContain('<!-- OPENSPEC:START -->');
       expect(proposalContent).toContain('**Guardrails**');
 
       const applyContent = await fs.readFile(auggieApply, 'utf-8');
       expect(applyContent).toContain('---');
-      expect(applyContent).toContain('description: Implement an approved OpenSpec change and keep tasks in sync.');
+      expect(applyContent).toContain('description: Implement an approved OnSpec change and keep tasks in sync.');
       expect(applyContent).toContain('argument-hint: change-id');
       expect(applyContent).toContain('Work through tasks sequentially');
 
       const archiveContent = await fs.readFile(auggieArchive, 'utf-8');
       expect(archiveContent).toContain('---');
-      expect(archiveContent).toContain('description: Archive a deployed OpenSpec change and update specs.');
+      expect(archiveContent).toContain('description: Archive a deployed OnSpec change and update specs.');
       expect(archiveContent).toContain('argument-hint: change-id');
       expect(archiveContent).toContain('openspec archive <id> --yes');
     });
@@ -949,22 +949,22 @@ describe('InitCommand', () => {
 
       const proposalContent = await fs.readFile(codeBuddyProposal, 'utf-8');
       expect(proposalContent).toContain('---');
-      expect(proposalContent).toContain('name: OpenSpec: Proposal');
-      expect(proposalContent).toContain('description: Scaffold a new OpenSpec change and validate strictly.');
-      expect(proposalContent).toContain('category: OpenSpec');
+      expect(proposalContent).toContain('name: OnSpec: Proposal');
+      expect(proposalContent).toContain('description: Scaffold a new OnSpec change and validate strictly.');
+      expect(proposalContent).toContain('category: OnSpec');
       expect(proposalContent).toContain('<!-- OPENSPEC:START -->');
       expect(proposalContent).toContain('**Guardrails**');
 
       const applyContent = await fs.readFile(codeBuddyApply, 'utf-8');
       expect(applyContent).toContain('---');
-      expect(applyContent).toContain('name: OpenSpec: Apply');
-      expect(applyContent).toContain('description: Implement an approved OpenSpec change and keep tasks in sync.');
+      expect(applyContent).toContain('name: OnSpec: Apply');
+      expect(applyContent).toContain('description: Implement an approved OnSpec change and keep tasks in sync.');
       expect(applyContent).toContain('Work through tasks sequentially');
 
       const archiveContent = await fs.readFile(codeBuddyArchive, 'utf-8');
       expect(archiveContent).toContain('---');
-      expect(archiveContent).toContain('name: OpenSpec: Archive');
-      expect(archiveContent).toContain('description: Archive a deployed OpenSpec change and update specs.');
+      expect(archiveContent).toContain('name: OnSpec: Archive');
+      expect(archiveContent).toContain('description: Archive a deployed OnSpec change and update specs.');
       expect(archiveContent).toContain('openspec archive <id> --yes');
     });
 
@@ -1037,26 +1037,26 @@ describe('InitCommand', () => {
 
       const proposalContent = await fs.readFile(crushProposal, 'utf-8');
       expect(proposalContent).toContain('---');
-      expect(proposalContent).toContain('name: OpenSpec: Proposal');
-      expect(proposalContent).toContain('description: Scaffold a new OpenSpec change and validate strictly.');
-      expect(proposalContent).toContain('category: OpenSpec');
+      expect(proposalContent).toContain('name: OnSpec: Proposal');
+      expect(proposalContent).toContain('description: Scaffold a new OnSpec change and validate strictly.');
+      expect(proposalContent).toContain('category: OnSpec');
       expect(proposalContent).toContain('tags: [openspec, change]');
       expect(proposalContent).toContain('<!-- OPENSPEC:START -->');
       expect(proposalContent).toContain('**Guardrails**');
 
       const applyContent = await fs.readFile(crushApply, 'utf-8');
       expect(applyContent).toContain('---');
-      expect(applyContent).toContain('name: OpenSpec: Apply');
-      expect(applyContent).toContain('description: Implement an approved OpenSpec change and keep tasks in sync.');
-      expect(applyContent).toContain('category: OpenSpec');
+      expect(applyContent).toContain('name: OnSpec: Apply');
+      expect(applyContent).toContain('description: Implement an approved OnSpec change and keep tasks in sync.');
+      expect(applyContent).toContain('category: OnSpec');
       expect(applyContent).toContain('tags: [openspec, apply]');
       expect(applyContent).toContain('Work through tasks sequentially');
 
       const archiveContent = await fs.readFile(crushArchive, 'utf-8');
       expect(archiveContent).toContain('---');
-      expect(archiveContent).toContain('name: OpenSpec: Archive');
-      expect(archiveContent).toContain('description: Archive a deployed OpenSpec change and update specs.');
-      expect(archiveContent).toContain('category: OpenSpec');
+      expect(archiveContent).toContain('name: OnSpec: Archive');
+      expect(archiveContent).toContain('description: Archive a deployed OnSpec change and update specs.');
+      expect(archiveContent).toContain('category: OnSpec');
       expect(archiveContent).toContain('tags: [openspec, archive]');
       expect(archiveContent).toContain('openspec archive <id> --yes');
     });
@@ -1097,20 +1097,20 @@ describe('InitCommand', () => {
 
       const proposalContent = await fs.readFile(costrictProposal, 'utf-8');
       expect(proposalContent).toContain('---');
-      expect(proposalContent).toContain('description: "Scaffold a new OpenSpec change and validate strictly."');
+      expect(proposalContent).toContain('description: "Scaffold a new OnSpec change and validate strictly."');
       expect(proposalContent).toContain('argument-hint: feature description or request');
       expect(proposalContent).toContain('<!-- OPENSPEC:START -->');
       expect(proposalContent).toContain('**Guardrails**');
 
       const applyContent = await fs.readFile(costrictApply, 'utf-8');
       expect(applyContent).toContain('---');
-      expect(applyContent).toContain('description: "Implement an approved OpenSpec change and keep tasks in sync."');
+      expect(applyContent).toContain('description: "Implement an approved OnSpec change and keep tasks in sync."');
       expect(applyContent).toContain('argument-hint: change-id');
       expect(applyContent).toContain('Work through tasks sequentially');
 
       const archiveContent = await fs.readFile(costrictArchive, 'utf-8');
       expect(archiveContent).toContain('---');
-      expect(archiveContent).toContain('description: "Archive a deployed OpenSpec change and update specs."');
+      expect(archiveContent).toContain('description: "Archive a deployed OnSpec change and update specs."');
       expect(archiveContent).toContain('argument-hint: change-id');
       expect(archiveContent).toContain('openspec archive <id> --yes');
     });
@@ -1151,22 +1151,22 @@ describe('InitCommand', () => {
 
       const proposalContent = await fs.readFile(qoderProposal, 'utf-8');
       expect(proposalContent).toContain('---');
-      expect(proposalContent).toContain('name: OpenSpec: Proposal');
-      expect(proposalContent).toContain('description: Scaffold a new OpenSpec change and validate strictly.');
-      expect(proposalContent).toContain('category: OpenSpec');
+      expect(proposalContent).toContain('name: OnSpec: Proposal');
+      expect(proposalContent).toContain('description: Scaffold a new OnSpec change and validate strictly.');
+      expect(proposalContent).toContain('category: OnSpec');
       expect(proposalContent).toContain('<!-- OPENSPEC:START -->');
       expect(proposalContent).toContain('**Guardrails**');
 
       const applyContent = await fs.readFile(qoderApply, 'utf-8');
       expect(applyContent).toContain('---');
-      expect(applyContent).toContain('name: OpenSpec: Apply');
-      expect(applyContent).toContain('description: Implement an approved OpenSpec change and keep tasks in sync.');
+      expect(applyContent).toContain('name: OnSpec: Apply');
+      expect(applyContent).toContain('description: Implement an approved OnSpec change and keep tasks in sync.');
       expect(applyContent).toContain('Work through tasks sequentially');
 
       const archiveContent = await fs.readFile(qoderArchive, 'utf-8');
       expect(archiveContent).toContain('---');
-      expect(archiveContent).toContain('name: OpenSpec: Archive');
-      expect(archiveContent).toContain('description: Archive a deployed OpenSpec change and update specs.');
+      expect(archiveContent).toContain('name: OnSpec: Archive');
+      expect(archiveContent).toContain('description: Archive a deployed OnSpec change and update specs.');
       expect(archiveContent).toContain('openspec archive <id> --yes');
     });
 

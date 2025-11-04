@@ -1,4 +1,4 @@
-# OpenSpec Conventions - Changes
+# OnSpec Conventions - Changes
 
 ## MODIFIED Requirements
 

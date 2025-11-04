@@ -1,6 +1,6 @@
-export const agentsTemplate = `# OpenSpec Instructions
+export const agentsTemplate = `# OnSpec Instructions
 
-Instructions for AI coding assistants using OpenSpec for spec-driven development.
+Instructions for AI coding assistants using OnSpec for spec-driven development.
 
 ## TL;DR Quick Checklist
 
@@ -99,7 +99,7 @@ openspec validate [item]       # Validate changes or specs
 openspec archive <change-id> [--yes|-y]   # Archive after deployment (add --yes for non-interactive runs)
 
 # Project management
-openspec init [path]           # Initialize OpenSpec
+openspec init [path]           # Initialize OnSpec
 openspec update [path]         # Update instruction files
 
 # Interactive mode
